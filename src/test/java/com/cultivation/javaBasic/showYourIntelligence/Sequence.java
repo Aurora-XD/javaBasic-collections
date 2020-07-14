@@ -44,7 +44,7 @@ class SequenceIterator implements Iterator<Integer> {
 //        throw new NotImplementedException();
         storage = new ArrayList<>();
         initStorage(start, end);
-        index = 0;
+        index = -1;
         // --end-->
     }
 
@@ -53,7 +53,7 @@ class SequenceIterator implements Iterator<Integer> {
         // TODO: please implements the following code to pass the test
         // <--start
 //        throw new NotImplementedException();
-        return index < storage.size();
+        return (index + 1) >= 0 && (index + 1) < storage.size();
         // --end-->
     }
 
@@ -62,7 +62,8 @@ class SequenceIterator implements Iterator<Integer> {
         // TODO: please implements the following code to pass the test
         // <--start
 //        throw new NotImplementedException();
-        return storage.get(index++);
+        index++;
+        return storage.get(index);
         // --end-->
     }
 }
